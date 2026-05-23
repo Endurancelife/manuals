@@ -1,35 +1,102 @@
-# Exmoor Ultra 2026
+# Exmoor Ultra 2026 Master Guide
 
-Welcome to the official runner guide for the Exmoor Ultra. Please read this document carefully before race day.
+Welcome to the ultimate runner framework for the Exmoor Ultra. This comprehensive manual details everything required for a successful event. Please review all sections.
+
+---
 
 ## 1. Race Schedule
-The event takes place on Saturday, June 14th. Please ensure you arrive with plenty of time to clear registration.
+The event takes place on Saturday, June 14th. Timings are strict to ensure all athletes pass the coastal sectors before high tide.
 
-* **06:00 AM** - Registration & Kit Check Opens
-* **07:30 AM** - Mandatory Safety Briefing (Start Line)
-* **08:00 AM** - Race Start
+* **05:30 AM** - Event Village & Car Park Opens
+* **06:00 AM** - Registration, Bib Collection & Kit Check Opens
+* **07:15 AM** - Registration Closes (No exceptions)
+* **07:30 AM** - Mandatory Safety Briefing at the Start Line
+* **08:00 AM** - Race Start (All Waves)
+* **09:30 PM** - Final Race Cut-off & Event Village Closes
+
+---
 
 ## 2. Mandatory Kit
-You must carry this equipment with you at all times during the race. Random kit checks will be carried out.
+The weather on Exmoor can change rapidly. You must carry this equipment with you at all times during the race. Random kit checks will be carried out at various checkpoints.
 
-* Waterproof jacket with taped seams
-* Fully charged mobile phone
-* Minimum 1 liter of hydration capacity
-* Emergency foil blanket
-* Whistle
+* **Waterproof jacket** with a hood and fully taped seams.
+* **Fully charged mobile phone** with the race director's number saved.
+* **Capacity to carry 1 liter of fluid** (bottles or bladder).
+* **Emergency foil blanket** (minimum size 1.3m x 2m).
+* **Survival whistle** for emergency signaling.
+* **Base layer or long-sleeve warm top** packed inside a waterproof bag.
+* **Emergency nutrition** containing at least 400 calories (e.g., 4 gels).
 
-## 3. Aid Stations
-There are three fully stocked aid stations along the route providing water, electrolytes, fruit, and sweet/savory snacks.
+---
 
-| Station | Location | Cut-off Time |
-| :--- | :--- | :--- |
-| Aid Station 1 | Valley Checkpoint (12km) | 10:30 AM |
-| Aid Station 2 | Coastal Ridge (28km) | 02:00 PM |
-| Aid Station 3 | The Village Hall (42km) | 05:30 PM |
+## 3. Aid Stations & Cut-offs
+There are three fully stocked aid stations along the route. They will provide water, Torq electrolyte drinks, fruit, vegan-friendly sweet treats, and savory snacks.
 
-## 4. Safety & Emergencies
-If you get into trouble on the course, please remain calm.
+| Station | Location | Distance Covered | Cut-off Time |
+| :--- | :--- | :--- | :--- |
+| Aid Station 1 | Valley Checkpoint | 12.4 km | 10:30 AM |
+| Aid Station 2 | Coastal Ridge | 28.1 km | 02:00 PM |
+| Aid Station 3 | The Village Hall | 42.8 km | 05:30 PM |
 
-> **Emergency Contact Number:** 07700 900077
+> **Important Note:** If you do not clear an aid station before its designated cut-off time, you will be retired from the race for safety reasons.
 
-If you need to drop out of the race, you **must** report to the nearest marshal or aid station and hand in your timing chip before leaving the course.
+---
+
+## 4. Course Navigation & Signs
+The entire course will be marked using bright orange arrows and reflective tape. You do not need navigation skills, but downloading the GPX file to your watch is highly advised.
+
+### Signage Rules
+1. **Orange Arrow:** Follow the exact direction of the arrow.
+2. **Red/White Tape across a path:** This indicates a "No Entry" zone. Do not cross the tape.
+3. **Two Arrows together:** This warns you that a sharp turn or hazard is coming up in the next 50 meters.
+
+If you do not see a course marker for more than 500 meters, backtrack to your last known marker to ensure you haven't missed a turn.
+
+---
+
+## 5. Rules & Disqualifications
+To maintain safety and fairness across the field, the following rules are strictly enforced by our marshals.
+
+* **No Littering:** Dropping litter anywhere on the course results in an **immediate disqualification**. Pack your trash out to the next aid station.
+* **Support Crews:** Family and friends are welcome at designated checkpoints, but receiving physical pacing or assistance outside of aid stations is forbidden.
+* **Gates:** You will pass through several working farms. You **must** close every gate behind you unless explicitly told otherwise by a marshal.
+* **Retirement:** If you drop out, you must report to a marshal and hand over your timing chip. Do not go home without telling us!
+
+---
+
+## 6. Travel, Parking & Logistics
+Please plan your travel carefully as rural roads leading to Exmoor can experience heavy congestion on weekend mornings.
+
+### Event Parking
+Parking is available in the main field directly adjacent to the Event Village. 
+* **Cost:** £5 per vehicle (cash only, collected at the gate to keep traffic moving).
+* **Carpooling:** Space is limited; please carpool where possible to minimize environmental impact.
+
+### Accommodation
+Camping spaces are available to book directly through the Exmoor National Park website. Local B&Bs book out months in advance, so plan ahead.
+
+---
+
+## 7. FAQs (Collapsible Tab Test)
+*Tap any question below to expand the hidden content and test the mobile accordion functionality.*
+
+<details>
+<summary><b>Can I run with my dog?</b></summary>
+<p>
+Unfortunately, due to farming livestock and narrow single-track coastal paths, dogs are not permitted to accompany runners on this specific event.
+</p>
+</details>
+
+<details>
+<summary><b>Are trekking poles allowed?</b></summary>
+<p>
+Yes! Trekking poles are fully permitted. However, please be mindful of other runners when using them on narrow or crowded technical climbs.
+</p>
+</details>
+
+<details>
+<summary><b>Can I change my distance category on race morning?</b></summary>
+<p>
+No category changes can be made on the day of the event. All distance changes must be finalized via email at least 7 days before the race.
+</p>
+</details>
