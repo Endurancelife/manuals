@@ -1,3 +1,91 @@
+<style>
+  /* 1. GLOBAL BRANDING & TYPOGRAPHY */
+  :root {
+    --theme-color: #D13A28; /* Endurancelife Logo Red/Orange */
+  }
+
+  body, .sidebar, input[type="search"] {
+    font-family: 'Lato', 'Helvetica Neue', sans-serif !important;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .markdown-section {
+    font-size: 16.5px !important;
+    line-height: 1.7 !important;
+    color: #222222 !important;
+  }
+
+  /* 2. FIXING THE BLUE SEARCH SHADOW */
+  .search input {
+    border: 1px solid #e0e0e0 !important;
+    background-color: #f9f9f9 !important;
+    box-shadow: none !important;
+    transition: all 0.25s ease-in-out !important;
+    border-radius: 4px !important;
+  }
+
+  /* Swaps the blue highlight for a subtle gray/brand theme border on focus */
+  .search input:focus {
+    outline: none !important;
+    box-shadow: 0 0 8px rgba(209, 58, 40, 0.2) !important;
+    border: 1px solid #D13A28 !important;
+    background-color: #ffffff !important;
+  }
+
+  /* 3. SIDEBAR NAVIGATION STYLING */
+  .sidebar {
+    background-color: #ffffff !important;
+    border-right: 1px solid #eeeeee !important;
+  }
+
+  /* Sidebar Active Link Indicator */
+  .sidebar ul li.active > a {
+    color: #D13A28 !important;
+    font-weight: 700 !important;
+    border-left: 4px solid #D13A28 !important;
+    padding-left: 11px !important;
+  }
+
+  /* 4. CONTENT CONTENT STYLING (Headers & Tables) */
+  .markdown-section h1, .markdown-section h2, .markdown-section h3 {
+    color: #111111 !important;
+    font-weight: 700 !important;
+  }
+
+  .markdown-section h2 {
+    border-bottom: 1px solid #eaeaea;
+    padding-bottom: 8px;
+    margin-top: 2.5em;
+  }
+
+  /* Tables styling to match website */
+  .markdown-section table {
+    display: table !important;
+    width: 100% !important;
+    border-collapse: collapse !important;
+    margin: 20px 0 !important;
+  }
+
+  .markdown-section th {
+    background-color: #f5f5f5 !important;
+    font-weight: 700 !important;
+    border: 1px solid #e0e0e0 !important;
+  }
+
+  .markdown-section td {
+    border: 1px solid #eeeeee !important;
+  }
+
+  /* Blockquote callout formatting */
+  .markdown-section blockquote {
+    border-left: 4px solid #D13A28 !important;
+    background-color: #fff5f4 !important;
+    color: #333333 !important;
+    padding: 15px !important;
+    border-radius: 0 4px 4px 0;
+  }
+</style>
+
 # Exmoor Ultra 2026 Master Guide
 
 Welcome to the ultimate runner framework for the Exmoor Ultra. This comprehensive manual details everything required for a successful event. Please review all sections.
@@ -77,7 +165,7 @@ Camping spaces are available to book directly through the Exmoor National Park w
 
 ---
 
-## 7. FAQs (Collapsible Tab Test)
+## 7. FAQs
 *Tap any question below to expand the hidden content and test the mobile accordion functionality.*
 
 <details>
