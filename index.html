@@ -35,21 +35,11 @@
       border-right: 1px solid #eeeeee !important;
     }
 
-    /* Target the text fallback title link if no image loads */
-    .app-name, .app-name a, .sidebar h1 a {
-      color: #d60d28 !important;
-      text-decoration: none !important;
-      font-weight: 700 !important;
-    }
-    .app-name a:hover, .sidebar h1 a:hover {
-      color: #9E2618 !important; 
-    }
-
     /* Natural-Flow Layout Configuration for Images inside the Sidebar */
     .sidebar img {
       max-width: 160px !important;
       height: auto !important;
-      margin: 15px auto 10px auto !important;
+      margin: 20px auto 10px auto !important;
       display: block !important;
       border: none !important;
       outline: none !important;
@@ -65,32 +55,30 @@
     }
 
     /* ==========================================================================
-       3. SIDEBAR BACKLINK BUTTON PANEL
+       3. SUBTLE UTILITY BACKLINK (Small, Muted, Well-Positioned)
        ========================================================================== */
-    .sidebar-backlink-wrapper {
-      padding: 0 15px !important;
-      margin-bottom: 25px !important;
-      text-align: center;
-    }
-
-    .sidebar-backlink-wrapper a {
+    .sidebar a[href*="endurancelife.com"] {
       display: block !important;
-      background-color: #ffffff !important;
-      color: #666666 !important;
-      border: 1px solid #e0e0e0 !important;
-      padding: 8px 12px !important;
-      border-radius: 4px !important;
+      width: 75% !important;
+      margin: 10px auto 25px auto !important; /* Positions it with perfect breathing room below the logo */
+      padding: 6px 10px !important;
+      font-size: 12px !important; /* Clean, downscaled size */
+      font-weight: 600 !important;
+      color: #777777 !important; /* Understated, soft grey text */
+      background-color: #f9f9f9 !important; /* Soft backdrop pane */
+      border: 1px solid #e5e5e5 !important; /* Light accent border border */
+      border-radius: 20px !important; /* Modern elegant pill shape */
+      text-align: center !important;
       text-decoration: none !important;
-      font-size: 13px !important;
-      font-weight: 700 !important;
       transition: all 0.2s ease-in-out !important;
     }
 
-    /* Brand red flood transformation on hover states */
-    .sidebar-backlink-wrapper a:hover {
-      background-color: #d60d28 !important;
-      color: #ffffff !important;
+    /* Subtle brand response on interaction */
+    .sidebar a[href*="endurancelife.com"]:hover {
+      color: #d60d28 !important; /* Gently illuminates brand red on hover */
+      background-color: #ffffff !important;
       border-color: #d60d28 !important;
+      box-shadow: 0 2px 8px rgba(214, 13, 40, 0.08) !important;
     }
 
     /* ==========================================================================
@@ -122,4 +110,52 @@
     .markdown-section h2 {
       border-bottom: 1px solid #eaeaea;
       padding-bottom: 8px;
-      margin-top: 2.5em
+      margin-top: 2.5em;
+    }
+
+    /* High-Performance Event Grid Data Tables */
+    .markdown-section table {
+      display: table !important;
+      width: 100% !important;
+      border-collapse: collapse !important;
+      margin: 20px 0 !important;
+    }
+
+    .markdown-section th {
+      background-color: #f5f5f5 !important;
+      font-weight: 700 !important;
+      border: 1px solid #e0e0e0 !important;
+    }
+
+    .markdown-section td {
+      border: 1px solid #eeeeee !important;
+    }
+
+    /* Safety Advisory Callouts */
+    .markdown-section blockquote {
+      border-left: 4px solid #d60d28 !important;
+      background-color: #fff5f4 !important;
+      color: #333333 !important;
+      padding: 15px !important;
+      border-radius: 0 4px 4px 0;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="app">Loading manual...</div>
+
+  <script>
+    window.$docsify = {
+      homepage: 'test-manual.md', // Baseline landing file
+      loadSidebar: true,          // Compiles layout from your _sidebar.md file
+      subMaxLevel: 3,             // Dynamically extracts header depths for sub-menus
+      search: 'auto'              // Global live index engine activation
+    }
+  </script>
+
+  <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
+  <script src="//cdn.jsdelivr.net/npm/docsify@4/lib/plugins/search.min.js"></script>
+
+</body>
+</html>
