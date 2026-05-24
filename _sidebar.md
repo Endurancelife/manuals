@@ -6,4 +6,4 @@
 * [Exmoor Ultra](exmoor.md)
 * [Peak District Challenge](peak-district.md)
 
-  **[← Endurancelife.com](https://www.endurancelife.com)**
+  **[← Back to main website](https://www.endurancelife.com)**
