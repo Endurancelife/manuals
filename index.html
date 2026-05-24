@@ -6,6 +6,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
   
+  <link rel="icon" type="image/png" href="favicon.png">
+  
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
   
   <style>
@@ -60,13 +62,13 @@
     .sidebar a[href*="endurancelife.com"] {
       display: block !important;
       width: 75% !important;
-      margin: 10px auto 25px auto !important; /* Positions it with perfect breathing room below the logo */
+      margin: 10px auto 25px auto !important; /* Perfect breathing room below logo */
       padding: 6px 10px !important;
-      font-size: 12px !important; /* Clean, downscaled size */
+      font-size: 12px !important; /* Clean, downscaled utility text size */
       font-weight: 600 !important;
       color: #777777 !important; /* Understated, soft grey text */
       background-color: #f9f9f9 !important; /* Soft backdrop pane */
-      border: 1px solid #e5e5e5 !important; /* Light accent border border */
+      border: 1px solid #e5e5e5 !important; /* Light accent border */
       border-radius: 20px !important; /* Modern elegant pill shape */
       text-align: center !important;
       text-decoration: none !important;
@@ -145,16 +147,16 @@
 
   <div id="app">Loading manual...</div>
 
- <script>
+  <script>
     window.$docsify = {
       loadSidebar: true,          // Compiles layout from the active folder's _sidebar.md
-      loadNavbar: true,           // ENABLES GLOBAL TOP DROPDOWN MENU
-      subMaxLevel: 3,             // Extracts header depths dynamically for inner sub-menus
+      loadNavbar: true,           // Enables global top multi-event dropdown menu
+      subMaxLevel: 3,             // Dynamically extracts header depths for sub-menus
       
       // AUTO-ROUTING SEARCH SEPARATION
       search: {
-        maxAge: 86400000, 
-        paths: 'auto',            // Crucial: Only indexes files linked in the ACTIVE sidebar
+        maxAge: 86400000,         // Caches the search index for 1 day in the browser to keep it lightning fast
+        paths: 'auto',            // Crucial: Only indexes files linked in the ACTIVE folder sidebar
         placeholder: 'Search this manual...',
         noData: 'No results found!',
         depth: 3
