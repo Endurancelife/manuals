@@ -1,3 +1,3 @@
 * Select Event
-  * [Classic Quarter](classic-quarter/)
-  * [Exmoor](exmoor/)
+  * [Classic Quarter](/classic-quarter/)
+  * [Exmoor](/exmoor/)
