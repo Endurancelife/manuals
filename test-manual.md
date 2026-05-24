@@ -15,7 +15,19 @@
     color: #222222 !important;
   }
 
-  /* 2. FIXING THE BLUE SEARCH SHADOW */
+  /* 2. SIDEBAR TITLE - BRAND RED */
+  .app-name, .app-name a, .sidebar h1 a {
+    color: #D13A28 !important; /* Brand red-orange immediately on load */
+    text-decoration: none !important; /* Removes default link underlines */
+    font-weight: 700 !important;
+  }
+
+  /* Deeper crimson hover state for interactive feedback */
+  .app-name a:hover, .sidebar h1 a:hover {
+    color: #9E2618 !important; 
+  }
+
+  /* 3. FIXING THE BLUE SEARCH SHADOW */
   .search input {
     border: 1px solid #e0e0e0 !important;
     background-color: #f9f9f9 !important;
@@ -24,7 +36,7 @@
     border-radius: 4px !important;
   }
 
-  /* Swaps the blue highlight for a subtle gray/brand theme border on focus */
+  /* Swaps the default blue highlight for a subtle brand-red glow on focus */
   .search input:focus {
     outline: none !important;
     box-shadow: 0 0 8px rgba(209, 58, 40, 0.2) !important;
@@ -32,7 +44,7 @@
     background-color: #ffffff !important;
   }
 
-  /* 3. SIDEBAR NAVIGATION STYLING */
+  /* 4. SIDEBAR NAVIGATION STYLING */
   .sidebar {
     background-color: #ffffff !important;
     border-right: 1px solid #eeeeee !important;
@@ -46,7 +58,7 @@
     padding-left: 11px !important;
   }
 
-  /* 4. CONTENT CONTENT STYLING (Headers & Tables) */
+  /* 5. MAIN CONTENT STYLING (Headers, Tables, & Callouts) */
   .markdown-section h1, .markdown-section h2, .markdown-section h3 {
     color: #111111 !important;
     font-weight: 700 !important;
@@ -58,7 +70,7 @@
     margin-top: 2.5em;
   }
 
-  /* Tables styling to match website */
+  /* Tables styling to look clean and professional */
   .markdown-section table {
     display: table !important;
     width: 100% !important;
@@ -76,7 +88,7 @@
     border: 1px solid #eeeeee !important;
   }
 
-  /* Blockquote callout formatting */
+  /* Blockquote callout formatting for important safety notes */
   .markdown-section blockquote {
     border-left: 4px solid #D13A28 !important;
     background-color: #fff5f4 !important;
