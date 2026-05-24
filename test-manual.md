@@ -113,8 +113,45 @@
   color: #D13A28 !important;
   border-bottom: 1px solid #D13A28;
 }
-</style>
 
+  .search {
+  margin-top: 45px !important; 
+}
+
+/* 2. Style and lock the text link into that newly created gap */
+.sidebar-text-backlink {
+  position: fixed;
+  left: 0;
+  top: 115px;       /* Adjust this up or down to align perfectly under your logo */
+  width: 240px;     /* Centers the link inline with the sidebar panel */
+  text-align: center;
+  z-index: 9999;
+  font-size: 13.5px !important;
+  font-weight: 700 !important;
+  color: #777777 !important; /* Understated elegant grey link */
+  text-decoration: none !important;
+  transition: color 0.2s ease-in-out !important;
+}
+
+/* Glows brand red when hovered */
+.sidebar-text-backlink:hover {
+  color: #D13A28 !important;
+}
+
+/* Mobile responsive safety: only show when the mobile sidebar drawer is open */
+@media screen and (max-width: 768px) {
+  .sidebar-text-backlink {
+    display: none;
+  }
+  body.open .sidebar-text-backlink {
+    display: block;
+    position: fixed;
+    left: 0;
+  }
+}
+  
+</style>
+<a href="https://www.endurancelife.com/classic-quarter" target="_blank" class="sidebar-text-backlink">← Endurancelife.com</a>
 <a href="https://www.endurancelife.com/classic-quarter" target="_blank" class="inline-backlink">← Return to Classic Quarter Main Website</a>
 
 # Exmoor Ultra 2026 Master Guide
