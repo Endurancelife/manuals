@@ -115,7 +115,7 @@
 }
 </style>
 
-<a href="https://www.endurancelife.com" target="_blank" class="inline-backlink">← Return to Endurancelife Main Website</a>
+<a href="https://www.endurancelife.com/classic-quarter" target="_blank" class="inline-backlink">← Return to Classic Quarter Main Website</a>
 
 # Exmoor Ultra 2026 Master Guide
 
