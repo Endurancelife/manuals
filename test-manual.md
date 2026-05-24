@@ -96,7 +96,26 @@
     padding: 15px !important;
     border-radius: 0 4px 4px 0;
   }
+
+  .inline-backlink {
+  display: inline-block !important;
+  color: #777777 !important;
+  font-weight: 600 !important;
+  font-size: 14px !important;
+  text-decoration: none !important;
+  margin-bottom: 20px !important;
+  border-bottom: 1px dashed #cccccc;
+  padding-bottom: 2px;
+  transition: color 0.2s ease-in-out !important;
+}
+
+.inline-backlink:hover {
+  color: #D13A28 !important;
+  border-bottom: 1px solid #D13A28;
+}
 </style>
+
+<a href="https://www.endurancelife.com" target="_blank" class="inline-backlink">← Return to Endurancelife Main Website</a>
 
 # Exmoor Ultra 2026 Master Guide
 
