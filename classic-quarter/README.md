@@ -2,7 +2,7 @@
 
 ## Safety Regulations
 
-[Environment](/_shared/global-copy.md ':include :fragment=environmental-policy'
+[Environment](/_shared/global-copy.md ':include :fragment=environmental-policy')
 
 ## Race Timings & Cut-offs
 
