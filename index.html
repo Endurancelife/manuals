@@ -145,12 +145,20 @@
 
   <div id="app">Loading manual...</div>
 
-  <script>
+  script>
     window.$docsify = {
-      homepage: 'test-manual.md', // Baseline landing file
-      loadSidebar: true,          // Compiles layout from your _sidebar.md file
-      subMaxLevel: 3,             // Dynamically extracts header depths for sub-menus
-      search: 'auto'              // Global live index engine activation
+      homepage: 'test-manual.md', 
+      loadSidebar: true,          
+      subMaxLevel: 3,             
+      
+      // EXPANDED SEARCH CONFIGURATION
+      search: {
+        maxAge: 86400000, // Caches the search index for 1 day in the browser to keep it lighting fast
+        paths: 'auto',
+        placeholder: 'Search all race manuals...',
+        noData: 'No results found!',
+        depth: 3 // Matches your subMaxLevel to index deep headers
+      }
     }
   </script>
 
