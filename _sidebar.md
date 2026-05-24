@@ -1,8 +1,6 @@
-![Classic Quarter](ClassicQuarter2026manuallogo.svg)
+![Classic Quarter](Favicon-cq.svg)
 
-<div class="sidebar-backlink-wrapper">
-  <a href="https://www.endurancelife.com" target="_blank">← Back to main website</a>
-</div>
+[← Back to main website](https://www.endurancelife.com)
 
 * [Classic Quarter](test-manual.md)
 * [Exmoor Ultra](exmoor.md)
