@@ -15,7 +15,6 @@
   <style>
     /* --- Base Typography & Structure --- */
     body {
-      /* Uses Dark/Light Plugin Variables for seamless transition */
       background-color: var(--background);
       color: var(--textColor);
       font-family: "Mark Pro", "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
@@ -24,7 +23,7 @@
       transition: background-color 0.3s, color 0.3s;
     }
 
-    /* --- Root Page Overrides (Hidden Sidebar & Left Alignment) --- */
+    /* --- Root Page Overrides (Hidden Sidebar & Layout) --- */
     body.is-root-page .sidebar, 
     body.is-root-page .sidebar-toggle {
       display: none !important;
@@ -35,19 +34,29 @@
       margin: 0 auto;
       padding-top: 40px;
     }
-    body.is-root-page .app-nav {
-      position: absolute;
-      right: 40px;
-      left: auto;
-      width: auto;
-    }
     body.is-root-page .markdown-section h1 a {
       pointer-events: none;
       color: var(--textColor);
       text-decoration: none;
     }
 
-    /* --- Root Page Tiles --- */
+    /* --- Top Navigation & Dark Mode Toggle Fixes --- */
+    body .app-nav {
+      position: absolute;
+      right: 75px; /* Pushed left to avoid moon icon */
+      left: auto;
+      width: auto;
+      z-index: 999;
+    }
+    #docsify-darklight-theme {
+      position: fixed !important;
+      top: 15px !important;
+      right: 25px !important;
+      margin: 0 !important;
+      z-index: 9999 !important;
+    }
+
+    /* --- Root Page Event Tiles --- */
     .event-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -72,265 +81,8 @@
       text-decoration: underline !important;
     }
 
-    /* --- Sidebar & Navigation Overrides --- */
+    /* --- Sidebar & Navigation Styling --- */
     .sidebar {
       background-color: var(--codeBackgroundColor);
       border-right: 1px solid var(--borderColor);
-      padding-top: 20px;
-      transition: background-color 0.3s, border-color 0.3s;
-    }
-    .sidebar .app-name {
-      font-size: 16px;
-      font-weight: 600;
-      color: var(--textColor);
-      text-align: left;
-      padding: 0 20px;
-    }
-    .sidebar h1, .sidebar h2, .sidebar h3 {
-      font-size: 14px;
-      font-weight: 600;
-      color: var(--textColor);
-      margin-top: 24px;
-      margin-bottom: 8px;
-      padding: 0 20px;
-    }
-    .sidebar ul li a {
-      font-size: 14px;
-      padding: 6px 20px;
-      color: var(--sidebarSublink);
-    }
-    .sidebar ul li.active > a {
-      color: var(--accent);
-      font-weight: 600;
-      background-color: transparent;
-      border-right: none;
-    }
-
-    .sidebar-back-btn {
-      display: inline-block;
-      margin: 10px 20px 20px 20px;
-      padding: 5px 16px;
-      background-color: transparent;
-      border: 1px solid var(--borderColor);
-      border-radius: 6px;
-      color: var(--textColor);
-      text-decoration: none;
-      font-size: 14px;
-      font-weight: 500;
-      line-height: 20px;
-      transition: 0.2s;
-    }
-    .sidebar-back-btn:hover {
-      background-color: var(--accent);
-      border-color: var(--accent);
-      color: #ffffff;
-    }
-
-    /* --- Prominent Menu Toggle (Hamburger) --- */
-    body .sidebar-toggle {
-      background-color: var(--textColor);
-      padding: 12px;
-      border-radius: 50%;
-      width: 48px;
-      height: 48px;
-      bottom: 24px;
-      left: 24px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-      border: none;
-      transition: transform 0.2s ease, background-color 0.3s;
-    }
-    body .sidebar-toggle:hover {
-      transform: scale(1.05);
-    }
-    body .sidebar-toggle span {
-      background-color: var(--background); /* Inverts color for the 3 lines */
-    }
-
-    /* --- Rounded Search Box --- */
-    .search {
-      border-bottom: none !important;
-      padding: 15px 20px;
-    }
-    .search input {
-      background-color: var(--background);
-      color: var(--textColor);
-      border: 1px solid var(--borderColor) !important;
-      border-radius: 20px !important;
-      padding: 8px 16px;
-      font-family: inherit;
-      transition: border-color 0.2s, box-shadow 0.2s;
-    }
-    .search input:focus {
-      border-color: var(--accent) !important;
-      box-shadow: 0 0 0 3px rgba(193, 39, 45, 0.15);
-      outline: none;
-    }
-
-    /* --- Global Markdown Styling --- */
-    .markdown-section {
-      max-width: 850px;
-    }
-    .markdown-section h1 { 
-      font-size: 32px; 
-      font-weight: 600; 
-      border-bottom: 1px solid var(--borderColor); 
-      padding-bottom: 8px; 
-      margin-bottom: 16px;
-    }
-    .markdown-section h2 { 
-      font-size: 24px; 
-      font-weight: 600; 
-      border-bottom: 1px solid var(--borderColor); 
-      padding-bottom: 8px; 
-      margin-top: 24px;
-      margin-bottom: 16px;
-    }
-    .markdown-section blockquote {
-      border-left: 4px solid var(--accent);
-      background: var(--codeBackgroundColor);
-      color: var(--textColor);
-      padding: 16px;
-      border: 1px solid var(--borderColor);
-      border-left-width: 4px;
-      border-radius: 6px;
-      margin: 16px 0;
-    }
-    /* --- Fix: Ensure Dark Mode Toggle is Clickable --- */
-    #docsify-darklight-theme {
-      position: relative;
-      z-index: 9999 !important;
-    }
-    body.is-root-page .app-nav {
-      z-index: 999; 
-    }
-
-    /* --- Fix A & B: Dynamic Title and Subtle Back Link --- */
-    .sidebar-title {
-      font-size: 18px;
-      font-weight: 700;
-      color: var(--textColor);
-      padding: 0 20px;
-      margin: 10px 0 15px 0;
-    }
-    .sidebar-back-link {
-      display: block;
-      padding: 0 20px;
-      margin-bottom: 25px;
-      font-size: 13px;
-      color: var(--sidebarSublink);
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-    .sidebar-back-link:hover {
-      color: var(--accent);
-      text-decoration: underline;
-    }
-
-    /* --- Fix C: Tighter Sub-menu Spacing & Hyphen Removal --- */
-    .sidebar ul li ul {
-      padding-left: 15px !important;
-      margin-top: 5px !important;
-    }
-    .sidebar ul li ul li {
-      padding: 2px 0 !important;
-      list-style-type: none !important; /* Removes default bullets */
-    }
-    .sidebar ul li ul li::before {
-      display: none !important; /* Removes the weird generated hyphens */
-    }
-    .sidebar ul li ul li a {
-      font-size: 13px !important;
-      padding: 2px 0 !important;
-    }
-
-    /* --- Fix D: Dark Mode Toggle Position --- */
-    #docsify-darklight-theme {
-      position: fixed !important;
-      top: 25px !important;
-      right: 25px !important;
-      margin: 0 !important;
-      z-index: 9999 !important;
-    }
-  </style>
-</head>
-<body>
-  <div id="app">Loading EnduranceLife Manuals...</div>
-  <script>
-    window.$docsify = {
-      loadSidebar: true,
-      loadNavbar: true,
-      subMaxLevel: 2,
-      auto2top: true,
-      
-      // 1. Scoped Search Configuration
-      search: {
-        paths: 'auto',
-        placeholder: 'Search',
-        noData: 'No results found.',
-        depth: 3
-      },
-
-      // 2. Pagination Configuration
-      pagination: {
-        previousText: 'Previous',
-        nextText: 'Next',
-        crossChapter: true,
-        crossChapterText: true,
-      },
-
-      // 3. Tabs Configuration
-      tabs: {
-        persist    : true,
-        sync       : true,
-        theme      : 'classic',
-        tabComments: true,
-        tabHeadings: true
-      },
-
-      // 4. Dark/Light Theme Variable Mapping
-      darklightTheme: {
-        defaultTheme: 'light',
-        light: {
-          accent: '#c1272d',              /* Endurancelife Red */
-          background: '#ffffff',          /* Pure White */
-          textColor: '#24292f',           /* GitHub Dark Gray Text */
-          sidebarSublink: '#57606a',      /* Light Mode Menu Text */
-          borderColor: '#d0d7de',         /* GitHub Subtle Border */
-          codeBackgroundColor: '#f6f8fa', /* Sidebar / Blockquote BG */
-          toogleBackground: '#ffffff'
-        },
-        dark: {
-          accent: '#c1272d',              /* Endurancelife Red */
-          background: '#0d1117',          /* GitHub Dark Mode BG */
-          textColor: '#c9d1d9',           /* GitHub Dark Text */
-          sidebarSublink: '#8b949e',      /* Dark Mode Menu Text */
-          borderColor: '#30363d',         /* Dark Border */
-          codeBackgroundColor: '#161b22', /* Dark Sidebar / Blockquote BG */
-          toogleBackground: '#0d1117'
-        }
-      },
-
-      plugins: [
-        // Hide sidebar cleanly on the root landing page
-        function(hook, vm) {
-          hook.beforeEach(function(html) {
-            if (vm.route.path === '/') {
-              document.body.classList.add('is-root-page');
-            } else {
-              document.body.classList.remove('is-root-page');
-            }
-            return html;
-          });
-        }
-      ]
-    }
-  </script>
-  
-  <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
-  
-  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/docsify-pagination/dist/docsify-pagination.min.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/docsify-darklight-theme@latest/dist/index.min.js" type="text/javascript"></script>
-  <script src="https://cdn.jsdelivr.net/npm/docsify-tabs@1"></script>
-</body>
-</html>
+      padding
