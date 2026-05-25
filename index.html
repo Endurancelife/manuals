@@ -203,6 +203,54 @@
     body.is-root-page .app-nav {
       z-index: 999; 
     }
+
+    /* --- Fix A & B: Dynamic Title and Subtle Back Link --- */
+    .sidebar-title {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--textColor);
+      padding: 0 20px;
+      margin: 10px 0 15px 0;
+    }
+    .sidebar-back-link {
+      display: block;
+      padding: 0 20px;
+      margin-bottom: 25px;
+      font-size: 13px;
+      color: var(--sidebarSublink);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .sidebar-back-link:hover {
+      color: var(--accent);
+      text-decoration: underline;
+    }
+
+    /* --- Fix C: Tighter Sub-menu Spacing & Hyphen Removal --- */
+    .sidebar ul li ul {
+      padding-left: 15px !important;
+      margin-top: 5px !important;
+    }
+    .sidebar ul li ul li {
+      padding: 2px 0 !important;
+      list-style-type: none !important; /* Removes default bullets */
+    }
+    .sidebar ul li ul li::before {
+      display: none !important; /* Removes the weird generated hyphens */
+    }
+    .sidebar ul li ul li a {
+      font-size: 13px !important;
+      padding: 2px 0 !important;
+    }
+
+    /* --- Fix D: Dark Mode Toggle Position --- */
+    #docsify-darklight-theme {
+      position: fixed !important;
+      top: 25px !important;
+      right: 25px !important;
+      margin: 0 !important;
+      z-index: 9999 !important;
+    }
   </style>
 </head>
 <body>
