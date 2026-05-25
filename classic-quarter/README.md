@@ -1,17 +1,17 @@
-# Classic Quarter Participant Manual
+# Classic Quarter: Race Overview
 
-## Safety Regulations
+The definitive guide to the Classic Quarter. Prepare yourself for relentless, unforgiving terrain across the stark beauty of the Cornish coast.
 
-[Environment](/_shared/global-copy.md ':include :fragment=environmental-policy')
+## The Challenge
 
-## Race Timings & Cut-offs
+The Classic Quarter is notorious for its rapidly changing weather systems and deep coastal undulations. You are expected to be self-sufficient and capable of managing extreme fatigue.
 
-[Cut-offs](/_shared/global-copy.md ':include :fragment=cutoff-boilerplate')
+### Environmental Commitment
 
-### Classic Quarter Specific Checkpoints
-Below are the exact cut-off matrices unique to the Classic Quarter coastline trail layout:
+[Environmental Policy](../_shared/environmental-policy.md ':include')
 
-| Station | Distance Covered | Cut-off Time |
-| :--- | :--- | :--- |
-| Aid Station 1 | 11 Miles | 10:30 AM |
-| Aid Station 2 | 22 Miles | 01:45 PM |
+## Distance & Elevation
+
+* **Distance:** 44 Miles
+* **Total Ascent:** +6,500ft
+* **Cut-Off Time:** 14 Hours (Strict enforcement at all CPs)
