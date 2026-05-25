@@ -15,3 +15,19 @@ The Classic Quarter is notorious for its rapidly changing weather systems and de
 * **Distance:** 44 Miles
 * **Total Ascent:** +6,500ft
 * **Cut-Off Time:** 14 Hours (Strict enforcement at all CPs)
+
+## Mandatory Kit List
+
+Ensure you have all items listed below.
+
+#### **Half Marathon**
+* 500ml Water
+* Fully charged mobile phone
+* Whistle
+
+#### **Ultra Marathon**
+* 1000ml Water
+* Fully charged mobile phone
+* Whistle
+* Waterproof jacket with taped seams
+* Headtorch with spare batteries
