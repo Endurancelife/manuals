@@ -1,5 +1,5 @@
+<a href="https://www.endurancelife.com/classic-quarter" class="sidebar-back-link">← Website homepage</a>
 <div class="sidebar-title">Classic Quarter</div>
-<a href="https://www.endurancelife.com/classic-quarter" class="sidebar-back-link">← Back to event homepage</a>
 
 * [Race Overview](classic-quarter/)
 * [Event Schedule](classic-quarter/schedule.md)
