@@ -52,29 +52,28 @@
       margin-left: 15px;
     }
     
-    /* Dark/Light Mode Strictly Locked to Top Right */
+    /* Dark/Light Mode Strictly Locked to Top Right & Always Clickable */
     #docsify-darklight-theme {
       position: fixed !important;
       top: 15px !important; 
       right: 15px !important;
       left: auto !important; 
       margin: 0 !important;
-      z-index: 99999 !important; /* Bumped to ensure it sits above everything */
+      z-index: 99999 !important; 
+      pointer-events: auto !important;
     }
 
-    /* FIX: Mobile Nav Adjustments & Unclickable Moon Fix */
+    /* FIX: Mobile Nav Shrink (Stops invisible overlaps on Moon/Hamburger) */
     @media (max-width: 768px) {
       body .app-nav {
-        right: 0 !important;
-        left: 0 !important;
         top: 25px !important;
-        width: 100% !important;
+        left: 60px !important;  /* Leaves room for the Hamburger */
+        right: 60px !important; /* Leaves room for the Moon */
+        width: auto !important; /* Prevents stretching */
         text-align: center;
-        padding: 0;
-        pointer-events: none; /* Stops the invisible container from blocking the moon icon */
+        padding: 0 !important;
       }
       body .app-nav ul {
-        pointer-events: auto; /* Re-enables clicks specifically on the links */
         display: flex;
         justify-content: center;
         gap: 15px;
@@ -119,7 +118,7 @@
     .sidebar {
       background-color: var(--codeBackgroundColor);
       border-right: 1px solid var(--borderColor);
-      padding-top: 70px !important; /* FIX: Pushes Search box down so Hamburger doesn't overlap it! */
+      padding-top: 70px !important; /* Pushes Search box down below the Hamburger */
       transition: background-color 0.3s, border-color 0.3s;
     }
     
@@ -194,174 +193,15 @@
       outline: none !important;
     }
 
-    /* --- FIX: Restored Hamburger with X Animation --- */
+    /* --- FIX: Restored Native Hamburger & X Animation --- */
     body .sidebar-toggle {
       background-color: var(--background) !important;
       border: 1px solid var(--borderColor) !important;
       border-left: none !important;
       border-radius: 0 6px 6px 0 !important; 
-      width: 44px !important; 
-      height: 44px !important;
       top: 15px !important;
-      left: 0 !important; 
       bottom: auto !important;
-      right: auto !important;
-      padding: 12px 10px !important; /* Restored to Docsify defaults so X rotates correctly */
-      box-shadow: 2px 2px 8px rgba(0,0,0,0.05) !important;
-      z-index: 9999 !important;
-      transition: all 0.3s ease !important;
+      /* By removing explicit widths, heights, and flexbox overrides, Docsify can calculate its X animation properly again */
     }
     body .sidebar-toggle span {
-      background-color: var(--textColor) !important;
-    }
-    
-    /* FIX: Move X to the right side of the menu when OPEN on Mobile */
-    @media (max-width: 768px) {
-      body.close .sidebar-toggle {
-        left: 240px !important; /* Moves button to the right side of the sidebar */
-        background-color: transparent !important; /* Blends it seamlessly into the sidebar */
-        border: none !important;
-        box-shadow: none !important;
-      }
-    }
-
-    /* --- Pagination Cards --- */
-    .pagination-item {
-      border: 1px solid var(--borderColor) !important; 
-      border-radius: 8px;
-      padding: 16px 20px;
-      background: var(--background);
-      transition: border-color 0.2s, transform 0.2s;
-      margin-top: 40px;
-    }
-    .pagination-item:hover {
-      border-color: var(--accent) !important;
-      transform: translateY(-2px);
-    }
-    .pagination-item-title {
-      font-size: 16px !important;
-      color: var(--textColor) !important; 
-      font-weight: 600 !important;
-      margin-top: 4px !important;
-    }
-    .pagination-item-label {
-      font-size: 12px;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      color: var(--sidebarSublink);
-    }
-
-    /* --- Global Markdown Styling --- */
-    .markdown-section {
-      max-width: 850px;
-    }
-    .markdown-section h1 { 
-      font-size: 32px; 
-      font-weight: 600; 
-      border-bottom: 1px solid var(--borderColor); 
-      padding-bottom: 8px; 
-      margin-bottom: 16px;
-    }
-    .markdown-section h2 { 
-      font-size: 24px; 
-      font-weight: 600; 
-      border-bottom: 1px solid var(--borderColor); 
-      padding-bottom: 8px; 
-      margin-top: 24px;
-      margin-bottom: 16px;
-    }
-    .markdown-section blockquote {
-      border-left: 4px solid var(--accent);
-      background: var(--codeBackgroundColor);
-      color: var(--textColor);
-      padding: 16px;
-      border: 1px solid var(--borderColor);
-      border-left-width: 4px;
-      border-radius: 6px;
-      margin: 16px 0;
-    }
-  </style>
-</head>
-<body>
-  <div id="app">Loading EnduranceLife Manuals...</div>
-  <script>
-    window.$docsify = {
-      loadSidebar: true,
-      loadNavbar: true,
-      subMaxLevel: 2,
-      auto2top: true,
-      
-      search: {
-        paths: 'auto',
-        placeholder: 'Search',
-        noData: 'No results found.',
-        depth: 3
-      },
-
-      pagination: {
-        previousText: 'Previous',
-        nextText: 'Next',
-        crossChapter: true,
-        crossChapterText: true,
-      },
-
-      tabs: {
-        persist    : true,
-        sync       : true,
-        theme      : 'classic',
-        tabComments: true,
-        tabHeadings: true
-      },
-
-      darklightTheme: {
-        defaultTheme: 'light',
-        light: {
-          accent: '#c1272d',              
-          background: '#ffffff',          
-          textColor: '#24292f',           
-          sidebarSublink: '#57606a',      
-          borderColor: '#d0d7de',         
-          codeBackgroundColor: '#f6f8fa', 
-          toogleBackground: '#ffffff'
-        },
-        dark: {
-          accent: '#c1272d',              
-          background: '#0d1117',          
-          textColor: '#c9d1d9',           
-          sidebarSublink: '#8b949e',      
-          borderColor: '#30363d',         
-          codeBackgroundColor: '#161b22', 
-          toogleBackground: '#0d1117'
-        }
-      },
-
-      plugins: [
-        function(hook, vm) {
-          hook.beforeEach(function(html) {
-            if (vm.route.path === '/') {
-              document.body.classList.add('is-root-page');
-            } else {
-              document.body.classList.remove('is-root-page');
-            }
-            return html;
-          });
-
-          hook.doneEach(function() {
-            const searchInput = document.querySelector('.search input');
-            if (searchInput && searchInput.value) {
-              searchInput.value = '';
-              searchInput.dispatchEvent(new Event('input', { bubbles: true })); 
-            }
-          });
-        }
-      ]
-    }
-  </script>
-  
-  <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
-  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/docsify-pagination/dist/docsify-pagination.min.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/docsify-darklight-theme@latest/dist/index.min.js" type="text/javascript"></script>
-  <script src="https://cdn.jsdelivr.net/npm/docsify-tabs@1"></script>
-</body>
-</html>
+      background-color: var(--textColor) !important
