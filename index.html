@@ -52,16 +52,17 @@
       margin-left: 15px;
     }
     
-    /* FIX C: Dark/Light Mode Locked to Top Right */
+    /* FIX A: Dark/Light Mode Strictly Locked to Top Right */
     #docsify-darklight-theme {
       position: fixed !important;
       top: 15px !important; 
       right: 15px !important;
+      left: auto !important; /* Prevents the plugin from shifting it left on mobile */
       margin: 0 !important;
       z-index: 9999 !important;
     }
 
-    /* FIX D: Mobile Nav Adjustments & Spacing */
+    /* Mobile Nav Adjustments & Spacing */
     @media (max-width: 768px) {
       body .app-nav {
         right: 0 !important;
@@ -83,7 +84,6 @@
       body .app-nav a {
         font-size: 13px;
       }
-      /* Pushes content down on mobile so it doesn't hit the nav */
       .markdown-section {
         padding-top: 60px !important; 
       }
@@ -193,39 +193,29 @@
       outline: none !important;
     }
 
-    /* --- FIX A & B: Top-Left Floating Circular Hamburger Menu --- */
+    /* --- FIX B: Flush Square Hamburger Menu (Native X Animation) --- */
     body .sidebar-toggle {
       background-color: var(--background) !important;
       border: 1px solid var(--borderColor) !important;
-      border-radius: 50% !important; 
-      width: 48px !important; 
-      height: 48px !important;
-      top: 15px !important;   /* Pinned to Top */
-      left: 15px !important;  /* Pinned to Left */
-      bottom: auto !important; /* Overrides default bottom placement */
+      border-left: none !important; /* Flush against the left screen edge */
+      border-radius: 0 6px 6px 0 !important; /* Square with slightly rounded right corners */
+      width: 44px !important; 
+      height: 44px !important;
+      top: 15px !important;
+      left: 0 !important; 
+      bottom: auto !important;
       right: auto !important;
-      padding: 0 !important;  /* Strip default padding */
-      display: flex !important;           /* Flexbox centering */
-      align-items: center !important;     /* Flexbox centering */
-      justify-content: center !important; /* Flexbox centering */
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1) !important;
-      transition: transform 0.2s ease !important;
+      padding: 15px 13px !important; /* Centers the icon mathematically */
+      box-shadow: 2px 2px 8px rgba(0,0,0,0.05) !important;
       z-index: 9999 !important;
     }
-    body .sidebar-toggle:hover {
-      transform: scale(1.05) !important;
-    }
-    /* Centers the inner container holding the lines */
     body .sidebar-toggle .sidebar-toggle-button {
-      margin: 0 !important;
       padding: 0 !important;
+      margin: 0 auto !important;
     }
     body .sidebar-toggle span {
       background-color: var(--textColor) !important;
-      margin-bottom: 4px !important;
-    }
-    body .sidebar-toggle span:last-child {
-      margin-bottom: 0 !important;
+      /* Notice: No heavy overrides here, allowing Docsify to natively animate the X! */
     }
 
     /* --- Pagination Cards (Neutral Text, Light Border) --- */
