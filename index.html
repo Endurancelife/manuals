@@ -195,6 +195,14 @@
       border-radius: 6px;
       margin: 16px 0;
     }
+    /* --- Fix: Ensure Dark Mode Toggle is Clickable --- */
+    #docsify-darklight-theme {
+      position: relative;
+      z-index: 9999 !important;
+    }
+    body.is-root-page .app-nav {
+      z-index: 999; 
+    }
   </style>
 </head>
 <body>
