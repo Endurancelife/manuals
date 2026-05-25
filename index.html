@@ -40,20 +40,41 @@
       text-decoration: none;
     }
 
-    /* --- Top Navigation & Dark Mode Toggle Fixes --- */
+    /* --- Top Navigation & Dark Mode Toggle Alignment --- */
     body .app-nav {
       position: absolute;
-      right: 75px; /* Pushed left to avoid moon icon */
-      left: auto;
-      width: auto;
+      right: 65px; 
+      top: 20px; 
+      margin: 0;
       z-index: 999;
     }
+    body .app-nav ul li {
+      margin-left: 15px;
+    }
     #docsify-darklight-theme {
-      position: fixed !important;
-      top: 15px !important;
-      right: 25px !important;
+      position: absolute !important;
+      top: 15px !important; 
+      right: 20px !important;
       margin: 0 !important;
       z-index: 9999 !important;
+    }
+
+    /* Mobile Nav Adjustments */
+    @media (max-width: 600px) {
+      body .app-nav {
+        right: 55px;
+        top: 22px;
+      }
+      body .app-nav ul {
+        display: flex;
+        gap: 10px;
+      }
+      body .app-nav ul li {
+        margin-left: 0;
+      }
+      body .app-nav a {
+        font-size: 13px; /* Prevents awkward line breaks on mobile */
+      }
     }
 
     /* --- Root Page Event Tiles --- */
@@ -89,7 +110,6 @@
       transition: background-color 0.3s, border-color 0.3s;
     }
     
-    /* Dynamic Event Title & Back Link */
     .sidebar-title {
       font-size: 18px;
       font-weight: 700;
@@ -111,7 +131,7 @@
       text-decoration: underline;
     }
 
-    /* Tighter Sub-menu Spacing & Hyphen Removal */
+    /* Sub-menu Layout */
     .sidebar ul li ul {
       padding-left: 15px !important;
       margin-top: 5px !important;
@@ -139,7 +159,7 @@
       border-right: none;
     }
 
-    /* --- Rounded Search Box --- */
+    /* --- Rounded Search Box (No Browser Glow) --- */
     .search {
       border-bottom: none !important;
       padding: 15px 20px;
@@ -151,38 +171,41 @@
       border-radius: 20px !important;
       padding: 8px 16px;
       font-family: inherit;
-      transition: border-color 0.2s, box-shadow 0.2s;
+      box-shadow: none !important; /* Strips browser default glow */
+      outline: none !important;
+      transition: border-color 0.2s;
     }
     .search input:focus {
       border-color: var(--accent) !important;
-      box-shadow: 0 0 0 3px rgba(193, 39, 45, 0.15);
-      outline: none;
+      box-shadow: none !important;
+      outline: none !important;
     }
 
-    /* --- Prominent Bottom-Right Hamburger Menu --- */
+    /* --- Floating Circular Hamburger Menu (Fixed Dimensions) --- */
     body .sidebar-toggle {
-      background-color: var(--textColor);
-      padding: 12px;
-      border-radius: 50%;
-      width: 48px;
-      height: 48px;
-      bottom: 24px;
-      left: auto !important; 
-      right: 24px !important; 
-      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-      border: none;
-      transition: transform 0.2s ease, background-color 0.3s;
+      background-color: var(--background) !important;
+      border: 1px solid var(--borderColor) !important;
+      border-radius: 50% !important; /* Perfect circle */
+      width: 50px !important; /* Locks width to prevent morphing */
+      height: 50px !important;
+      bottom: 24px !important;
+      left: 24px !important; /* Bottom left alignment */
+      right: auto !important;
+      padding: 13px !important;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1) !important;
+      transition: transform 0.2s ease !important;
+      z-index: 9999 !important;
     }
     body .sidebar-toggle:hover {
-      transform: scale(1.05);
+      transform: scale(1.05) !important;
     }
     body .sidebar-toggle span {
-      background-color: var(--background);
+      background-color: var(--textColor) !important;
     }
 
-    /* --- Pagination Cards --- */
+    /* --- Pagination Cards (Neutral Text, Light Border) --- */
     .pagination-item {
-      border: 1px solid var(--borderColor);
+      border: 1px solid var(--borderColor) !important; 
       border-radius: 8px;
       padding: 16px 20px;
       background: var(--background);
@@ -190,12 +213,12 @@
       margin-top: 40px;
     }
     .pagination-item:hover {
-      border-color: var(--accent);
+      border-color: var(--accent) !important;
       transform: translateY(-2px);
     }
     .pagination-item-title {
-      font-size: 18px !important;
-      color: var(--accent) !important;
+      font-size: 16px !important;
+      color: var(--textColor) !important; /* Neutral dark text */
       font-weight: 600 !important;
       margin-top: 4px !important;
     }
@@ -246,7 +269,7 @@
       subMaxLevel: 2,
       auto2top: true,
       
-      // 1. Scoped Search Configuration
+      // Scoped Search Configuration
       search: {
         paths: 'auto',
         placeholder: 'Search',
@@ -254,7 +277,7 @@
         depth: 3
       },
 
-      // 2. Pagination Configuration
+      // Pagination Configuration
       pagination: {
         previousText: 'Previous',
         nextText: 'Next',
@@ -262,7 +285,7 @@
         crossChapterText: true,
       },
 
-      // 3. Tabs Configuration
+      // Tabs Configuration
       tabs: {
         persist    : true,
         sync       : true,
@@ -271,32 +294,32 @@
         tabHeadings: true
       },
 
-      // 4. Dark/Light Theme Variable Mapping
+      // Dark/Light Theme Variable Mapping
       darklightTheme: {
         defaultTheme: 'light',
         light: {
-          accent: '#c1272d',              /* Endurancelife Red */
-          background: '#ffffff',          /* Pure White */
-          textColor: '#24292f',           /* GitHub Dark Gray Text */
-          sidebarSublink: '#57606a',      /* Light Mode Menu Text */
-          borderColor: '#d0d7de',         /* GitHub Subtle Border */
-          codeBackgroundColor: '#f6f8fa', /* Sidebar / Blockquote BG */
+          accent: '#c1272d',              
+          background: '#ffffff',          
+          textColor: '#24292f',           
+          sidebarSublink: '#57606a',      
+          borderColor: '#d0d7de',         
+          codeBackgroundColor: '#f6f8fa', 
           toogleBackground: '#ffffff'
         },
         dark: {
-          accent: '#c1272d',              /* Endurancelife Red */
-          background: '#0d1117',          /* GitHub Dark Mode BG */
-          textColor: '#c9d1d9',           /* GitHub Dark Text */
-          sidebarSublink: '#8b949e',      /* Dark Mode Menu Text */
-          borderColor: '#30363d',         /* Dark Border */
-          codeBackgroundColor: '#161b22', /* Dark Sidebar / Blockquote BG */
+          accent: '#c1272d',              
+          background: '#0d1117',          
+          textColor: '#c9d1d9',           
+          sidebarSublink: '#8b949e',      
+          borderColor: '#30363d',         
+          codeBackgroundColor: '#161b22', 
           toogleBackground: '#0d1117'
         }
       },
 
       plugins: [
         function(hook, vm) {
-          // A. Hide sidebar cleanly on the root landing page
+          // Hide sidebar cleanly on the root landing page
           hook.beforeEach(function(html) {
             if (vm.route.path === '/') {
               document.body.classList.add('is-root-page');
@@ -306,12 +329,11 @@
             return html;
           });
 
-          // B. Clear Search Box after clicking a result
+          // Clear Search Box after clicking a result
           hook.doneEach(function() {
             const searchInput = document.querySelector('.search input');
             if (searchInput && searchInput.value) {
               searchInput.value = '';
-              // Force Docsify to register the empty value and hide results
               searchInput.dispatchEvent(new Event('input', { bubbles: true })); 
             }
           });
