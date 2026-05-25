@@ -1,3 +1,2 @@
-* Select Event
-  * [Classic Quarter](/classic-quarter/)
-  * [Exmoor](/exmoor/)
+* [Endurancelife Home](https://www.endurancelife.com)
+* [Support](mailto:support@endurancelife.com)
