@@ -1,5 +1,7 @@
-![Classic Quarter](ClassicQuarter2026manuallogo.svg)
+### Classic Quarter Manual
 
-[← Back to main website](https://www.endurancelife.com/classic-quarter)
+<a href="https://www.endurancelife.com" class="sidebar-back-btn">← Back to Main Website</a>
 
-* [Overview](classic-quarter/README.md)
+* [Race Overview](classic-quarter/)
+* [Mandatory Kit](classic-quarter/kit.md)
+* [Rules & Regulations](classic-quarter/rules.md)
