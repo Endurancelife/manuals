@@ -1,4 +1,5 @@
 #### Quarter Marathon
+<!-- tabs:start -->
 
 * 500ml Water capacity
 * Fully charged mobile phone (with race HQ number saved)
@@ -7,3 +8,5 @@
 
 * 1000ml Water capacity
 * Fully charged mobile phone (with race HQ number saved)
+  
+<!-- tabs:end -->
