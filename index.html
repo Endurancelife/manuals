@@ -103,12 +103,12 @@
     }
     
     /* Meta Back Links (Stacked perfectly) */
-    .sidebar-back-link {
+.sidebar-back-link {
       display: block;
       padding: 0 20px;
       margin-bottom: 8px;
-      font-size: 14px;
-      font-weight: 500;
+      font-size: 13px; /* Dropped back down from 14px */
+      font-weight: 400; /* Removed the bolding */
       color: var(--textColor);
       text-decoration: none;
       transition: color 0.2s;
@@ -117,7 +117,7 @@
       color: var(--accent);
     }
     .sidebar-back-link:last-of-type {
-      margin-bottom: 25px; /* Adds space before the main title */
+      margin-bottom: 25px; 
     }
 
     .sidebar ul li ul {
