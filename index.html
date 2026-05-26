@@ -43,18 +43,7 @@
       border-bottom: none !important;
     }
 
-    /* --- Top Navigation & Dark Mode Toggle Alignment --- */
-    body .app-nav {
-      position: absolute;
-      right: 65px; 
-      top: 20px; 
-      margin: 0;
-      z-index: 999;
-    }
-    body .app-nav ul li {
-      margin-left: 15px;
-    }
-    
+    /* --- Dark Mode Toggle Alignment --- */
     #docsify-darklight-theme {
       position: fixed !important;
       top: 15px !important; 
@@ -65,28 +54,8 @@
       pointer-events: auto !important;
     }
 
+    /* Prevents mobile content from crashing into corner icons */
     @media (max-width: 768px) {
-      body .app-nav {
-        top: 25px !important;
-        left: 70px !important;  
-        right: 70px !important; 
-        width: auto !important; 
-        text-align: center;
-        padding: 0 !important;
-        pointer-events: none; 
-      }
-      body .app-nav ul {
-        display: flex;
-        justify-content: center;
-        gap: 15px;
-        pointer-events: auto; 
-      }
-      body .app-nav ul li {
-        margin: 0;
-      }
-      body .app-nav a {
-        font-size: 13px;
-      }
       .markdown-section {
         padding-top: 60px !important; 
       }
@@ -133,11 +102,11 @@
       margin: 10px 0 15px 0;
     }
     
+    /* Meta Back Links (Stacked perfectly) */
     .sidebar-back-link {
-      display: inline-block;
+      display: block;
       padding: 0 20px;
-      margin-top: 5px;
-      margin-bottom: 20px;
+      margin-bottom: 8px;
       font-size: 14px;
       font-weight: 500;
       color: var(--textColor);
@@ -146,6 +115,9 @@
     }
     .sidebar-back-link:hover {
       color: var(--accent);
+    }
+    .sidebar-back-link:last-of-type {
+      margin-bottom: 25px; /* Adds space before the main title */
     }
 
     .sidebar ul li ul {
@@ -202,7 +174,6 @@
     }
 
     /* --- BULLETPROOF HAMBURGER TO "X" ANIMATION --- */
-    /* Container (Top-Left Fixed) */
     body .sidebar-toggle {
       background-color: var(--background) !important;
       border: 1px solid var(--borderColor) !important;
@@ -230,7 +201,6 @@
       margin: 0 !important;
     }
     
-    /* The 3 Lines */
     body .sidebar-toggle span {
       background-color: var(--textColor) !important;
       width: 100% !important;
@@ -242,25 +212,19 @@
       transition: all 0.3s ease-in-out !important;
     }
     
-    /* DESKTOP LOGIC (>= 769px) */
     @media screen and (min-width: 769px) {
-      /* Sidebar hidden (.close) -> Hamburger */
       body.close .sidebar-toggle span:nth-child(1) { top: 0px !important; transform: rotate(0) !important; }
       body.close .sidebar-toggle span:nth-child(2) { top: 6px !important; opacity: 1 !important; }
       body.close .sidebar-toggle span:nth-child(3) { top: 12px !important; transform: rotate(0) !important; }
-      /* Sidebar visible (default) -> X */
       body:not(.close) .sidebar-toggle span:nth-child(1) { top: 6px !important; transform: rotate(45deg) !important; }
       body:not(.close) .sidebar-toggle span:nth-child(2) { top: 6px !important; opacity: 0 !important; }
       body:not(.close) .sidebar-toggle span:nth-child(3) { top: 6px !important; transform: rotate(-45deg) !important; }
     }
 
-    /* MOBILE LOGIC (<= 768px) */
     @media screen and (max-width: 768px) {
-      /* Sidebar hidden (default) -> Hamburger */
       body:not(.close) .sidebar-toggle span:nth-child(1) { top: 0px !important; transform: rotate(0) !important; }
       body:not(.close) .sidebar-toggle span:nth-child(2) { top: 6px !important; opacity: 1 !important; }
       body:not(.close) .sidebar-toggle span:nth-child(3) { top: 12px !important; transform: rotate(0) !important; }
-      /* Sidebar visible (.close) -> X */
       body.close .sidebar-toggle span:nth-child(1) { top: 6px !important; transform: rotate(45deg) !important; }
       body.close .sidebar-toggle span:nth-child(2) { top: 6px !important; opacity: 0 !important; }
       body.close .sidebar-toggle span:nth-child(3) { top: 6px !important; transform: rotate(-45deg) !important; }
@@ -328,7 +292,6 @@
   <script>
     window.$docsify = {
       loadSidebar: true,
-      loadNavbar: true,
       subMaxLevel: 2,
       auto2top: true,
       
