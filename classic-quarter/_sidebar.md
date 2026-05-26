@@ -1,5 +1,7 @@
-<a href="https://www.endurancelife.com/classic-quarter" class="sidebar-back-link">← Event homepage</a>
-<a href="https://www.endurancelife.com/contact/" class="sidebar-back-link">✉ Contact Support</a>
+<div class="sidebar-utility-box">
+  <a href="https://www.endurancelife.com/classic-quarter" class="sidebar-back-link">← Event homepage</a>
+  <a href="https://www.endurancelife.com/contact/" class="sidebar-back-link">✉ Contact Support</a>
+</div>
 
 <div class="sidebar-title">Classic Quarter</div>
 
