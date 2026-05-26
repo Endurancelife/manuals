@@ -68,12 +68,12 @@
     @media (max-width: 768px) {
       body .app-nav {
         top: 25px !important;
-        left: 60px !important;  
-        right: 60px !important; 
+        left: 70px !important;  
+        right: 70px !important; 
         width: auto !important; 
         text-align: center;
         padding: 0 !important;
-        pointer-events: none;
+        pointer-events: none; 
       }
       body .app-nav ul {
         display: flex;
@@ -121,7 +121,7 @@
     .sidebar {
       background-color: var(--codeBackgroundColor);
       border-right: 1px solid var(--borderColor);
-      padding-top: 20px !important; 
+      padding-top: 70px !important; /* Pushes Search box below the top-left Hamburger */
       transition: background-color 0.3s, border-color 0.3s;
     }
     
@@ -200,6 +200,58 @@
       box-shadow: none !important;
       outline: none !important;
     }
+
+    /* --- BULLETPROOF HAMBURGER TO "X" ANIMATION --- */
+    /* Container (Top-Left Fixed) */
+    body .sidebar-toggle {
+      background-color: var(--background) !important;
+      border: 1px solid var(--borderColor) !important;
+      border-radius: 6px !important;
+      width: 42px !important;
+      height: 42px !important;
+      top: 15px !important;
+      left: 15px !important;
+      bottom: auto !important;
+      right: auto !important;
+      padding: 0 !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      z-index: 99999 !important;
+      position: fixed !important;
+      cursor: pointer;
+    }
+    
+    body .sidebar-toggle-button {
+      width: 18px !important;
+      height: 14px !important;
+      position: relative !important;
+      padding: 0 !important;
+      margin: 0 !important;
+    }
+    
+    /* The 3 Lines */
+    body .sidebar-toggle span {
+      background-color: var(--textColor) !important;
+      width: 100% !important;
+      height: 2px !important;
+      border-radius: 2px !important;
+      position: absolute !important;
+      left: 0 !important;
+      margin: 0 !important;
+      transition: all 0.3s ease-in-out !important;
+    }
+    
+    /* CLOSED STATE (Sidebar hidden): Hamburger */
+    body.close .sidebar-toggle span:nth-child(1) { top: 0px !important; transform: rotate(0) !important; }
+    body.close .sidebar-toggle span:nth-child(2) { top: 6px !important; opacity: 1 !important; }
+    body.close .sidebar-toggle span:nth-child(3) { top: 12px !important; transform: rotate(0) !important; }
+    
+    /* OPEN STATE (Sidebar visible): "X" */
+    body:not(.close) .sidebar-toggle span:nth-child(1) { top: 6px !important; transform: rotate(45deg) !important; }
+    body:not(.close) .sidebar-toggle span:nth-child(2) { top: 6px !important; opacity: 0 !important; }
+    body:not(.close) .sidebar-toggle span:nth-child(3) { top: 6px !important; transform: rotate(-45deg) !important; }
+
 
     /* --- Pagination Cards --- */
     .pagination-item {
