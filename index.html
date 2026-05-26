@@ -54,7 +54,6 @@
       pointer-events: auto !important;
     }
 
-    /* Prevents mobile content from crashing into corner icons */
     @media (max-width: 768px) {
       .markdown-section {
         padding-top: 60px !important; 
@@ -88,45 +87,41 @@
 
     /* --- Sidebar & Navigation Styling --- */
     .sidebar {
-      background-color: var(--codeBackgroundColor);
+      background-color: var(--background) !important; /* GitHub Style: Blends with main page */
       border-right: 1px solid var(--borderColor);
       padding-top: 70px !important; 
       transition: background-color 0.3s, border-color 0.3s;
     }
     
-    .sidebar-title {
-      font-size: 18px;
-      font-weight: 700;
-      color: var(--textColor);
-      padding: 0 20px;
-      margin: 10px 0 15px 0;
-    }
-    
-/* --- Utility Links Box (The "Plaque") --- */
-    .sidebar-utility-box {
-      margin: 0 15px 25px 15px;
-      padding: 12px 15px;
-      background-color: var(--background); /* Uses the pure background to contrast against the shaded sidebar */
-      border: 1px solid var(--borderColor);
-      border-radius: 8px;
-    }
-    
     .sidebar-back-link {
       display: block;
-      margin-bottom: 10px; /* Moves them closer together */
-      font-size: 13px;
+      padding: 0 20px;
+      margin-top: 20px;
+      margin-bottom: 25px;
+      font-size: 14px;
       font-weight: 400;
       color: var(--textColor);
       text-decoration: none;
       transition: color 0.2s;
     }
-    .sidebar-back-link:last-child {
-      margin-bottom: 0; /* Removes the gap under the bottom link */
-    }
     .sidebar-back-link:hover {
       color: var(--accent);
     }
 
+    .sidebar-title {
+      font-size: 22px; /* GitHub Style: Larger title */
+      font-weight: 700;
+      color: var(--textColor);
+      padding: 0 20px;
+      margin: 0 0 20px 0;
+    }
+
+    .sidebar-divider {
+      border-top: 1px solid var(--borderColor);
+      margin: 0 0 15px 0;
+    }
+
+    /* Sub-menu Layout */
     .sidebar ul li ul {
       padding-left: 15px !important;
       margin-top: 5px !important;
@@ -144,14 +139,14 @@
     }
     .sidebar ul li a {
       font-size: 14px;
-      padding: 6px 20px;
+      padding: 8px 20px; /* GitHub Style: Slightly taller menu items */
       color: var(--sidebarSublink);
     }
     
     .sidebar ul li.active > a {
       color: var(--textColor) !important; 
       font-weight: 600;
-      background-color: var(--codeBackgroundColor) !important; 
+      background-color: var(--codeBackgroundColor) !important; /* GitHub Style: Gray highlight */
       border-left: 4px solid var(--accent) !important; 
       padding-left: 16px !important; 
       border-right: none;
@@ -180,61 +175,17 @@
       outline: none !important;
     }
 
-    /* --- BULLETPROOF HAMBURGER TO "X" ANIMATION --- */
-    body .sidebar-toggle {
+    /* --- Native Hamburger Menu --- */
+    .sidebar-toggle {
       background-color: var(--background) !important;
-      border: 1px solid var(--borderColor) !important;
-      border-radius: 6px !important;
-      width: 42px !important;
-      height: 42px !important;
-      top: 15px !important;
-      left: 15px !important;
-      bottom: auto !important;
-      right: auto !important;
-      padding: 0 !important;
-      display: flex !important;
-      align-items: center !important;
-      justify-content: center !important;
-      z-index: 99999 !important;
-      position: fixed !important;
-      cursor: pointer;
+      transition: background-color 0.3s !important;
     }
-    
-    body .sidebar-toggle-button {
-      width: 18px !important;
-      height: 14px !important;
-      position: relative !important;
-      padding: 0 !important;
-      margin: 0 !important;
-    }
-    
-    body .sidebar-toggle span {
+    .sidebar-toggle span {
       background-color: var(--textColor) !important;
-      width: 100% !important;
-      height: 2px !important;
-      border-radius: 2px !important;
-      position: absolute !important;
-      left: 0 !important;
-      margin: 0 !important;
-      transition: all 0.3s ease-in-out !important;
     }
-    
-    @media screen and (min-width: 769px) {
-      body.close .sidebar-toggle span:nth-child(1) { top: 0px !important; transform: rotate(0) !important; }
-      body.close .sidebar-toggle span:nth-child(2) { top: 6px !important; opacity: 1 !important; }
-      body.close .sidebar-toggle span:nth-child(3) { top: 12px !important; transform: rotate(0) !important; }
-      body:not(.close) .sidebar-toggle span:nth-child(1) { top: 6px !important; transform: rotate(45deg) !important; }
-      body:not(.close) .sidebar-toggle span:nth-child(2) { top: 6px !important; opacity: 0 !important; }
-      body:not(.close) .sidebar-toggle span:nth-child(3) { top: 6px !important; transform: rotate(-45deg) !important; }
-    }
-
-    @media screen and (max-width: 768px) {
-      body:not(.close) .sidebar-toggle span:nth-child(1) { top: 0px !important; transform: rotate(0) !important; }
-      body:not(.close) .sidebar-toggle span:nth-child(2) { top: 6px !important; opacity: 1 !important; }
-      body:not(.close) .sidebar-toggle span:nth-child(3) { top: 12px !important; transform: rotate(0) !important; }
-      body.close .sidebar-toggle span:nth-child(1) { top: 6px !important; transform: rotate(45deg) !important; }
-      body.close .sidebar-toggle span:nth-child(2) { top: 6px !important; opacity: 0 !important; }
-      body.close .sidebar-toggle span:nth-child(3) { top: 6px !important; transform: rotate(-45deg) !important; }
+    body.close .sidebar-toggle {
+      width: 48px !important;
+      border-radius: 0 6px 6px 0;
     }
 
     /* --- Pagination Cards --- */
