@@ -3,7 +3,6 @@
   <span style="color: var(--borderColor);">|</span>
   <a href="https://www.endurancelife.com/contact/" style="color: var(--sidebarSublink); text-decoration: none;">Support ↗</a>
 </div>
-<div class="sidebar-divider"></div>
 <div class="sidebar-title">Classic Quarter</div>
 <div class="sidebar-divider"></div>
 
