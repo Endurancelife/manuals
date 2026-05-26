@@ -90,39 +90,46 @@
     .sidebar {
       background-color: var(--background) !important; 
       border-right: 1px solid var(--borderColor);
-      padding-top: 70px !important; /* Clears the fixed top-left hamburger */
+      padding-top: 70px !important; 
       transition: background-color 0.3s, border-color 0.3s;
     }
     
+    /* FIX: Subdued, Indented, and Spaced External Links */
     .sidebar-back-link {
       display: block;
-      padding: 0 20px;
+      padding: 0 20px 0 24px; /* Indented slightly */
       margin-top: 0;
-      margin-bottom: 8px;
-      font-size: 13px; /* Reduced for hierarchy */
+      margin-bottom: 4px; /* Closer together */
+      font-size: 13px; 
       font-weight: 400;
-      color: var(--sidebarSublink); /* Lighter gray for hierarchy */
+      color: var(--sidebarSublink); 
+      opacity: 0.8; /* Made slightly lighter */
       text-decoration: none;
-      transition: color 0.2s;
+      transition: all 0.2s;
+    }
+    .sidebar-back-link:first-of-type {
+      margin-top: -5px; /* Pulls them closer to the search box */
     }
     .sidebar-back-link:last-of-type {
-      margin-bottom: 25px;
+      margin-bottom: 16px; /* Perfect top spacing for the Title */
     }
     .sidebar-back-link:hover {
       color: var(--accent);
+      opacity: 1; /* Brightens up on hover */
     }
 
+    /* FIX: Perfectly Balanced Title Spacing */
     .sidebar-title {
       font-size: 22px; 
       font-weight: 700;
       color: var(--textColor);
       padding: 0 20px;
-      margin: 0 0 20px 0;
+      margin: 0 0 16px 0; /* Perfect bottom spacing for the Title */
     }
 
     .sidebar-divider {
       border-top: 1px solid var(--borderColor);
-      margin: 0 0 15px 0;
+      margin: 0 0 16px 0; /* Matches the spacing below the title */
     }
 
     /* Sub-menu Layout */
