@@ -129,7 +129,9 @@
       padding: 0 20px;
       margin: 10px 0 15px 0;
     }
-   .sidebar-back-link {
+    
+    /* Subtle Back Link above title */
+    .sidebar-back-link {
       display: inline-block;
       padding: 0 20px;
       margin-top: 5px;
@@ -165,11 +167,16 @@
       padding: 6px 20px;
       color: var(--sidebarSublink);
     }
+    
+    /* GitHub Style Active Menu Link (Shaded with red bar) */
     .sidebar ul li.active > a {
-      color: var(--accent);
+      color: var(--textColor) !important; 
       font-weight: 600;
-      background-color: transparent;
+      background-color: var(--codeBackgroundColor) !important; 
+      border-left: 4px solid var(--accent) !important; 
+      padding-left: 16px !important; 
       border-right: none;
+      border-radius: 0 6px 6px 0; 
     }
 
     /* --- Rounded Search Box --- */
@@ -202,7 +209,104 @@
       border-radius: 0 6px 6px 0 !important; 
       top: 15px !important;
       bottom: auto !important;
-      /* By removing explicit widths, heights, and flexbox overrides, Docsify can calculate its X animation properly again */
     }
     body .sidebar-toggle span {
-      background-color: var(--textColor) !important
+      background-color: var(--textColor) !important;
+    }
+
+    /* --- Pagination Cards --- */
+    .pagination-item {
+      border: 1px solid var(--borderColor) !important; 
+      border-radius: 8px;
+      padding: 16px 20px;
+      background: var(--background);
+      transition: border-color 0.2s, transform 0.2s;
+      margin-top: 40px;
+    }
+    .pagination-item:hover {
+      border-color: var(--accent) !important;
+      transform: translateY(-2px);
+    }
+    .pagination-item-title {
+      font-size: 16px !important;
+      color: var(--textColor) !important; 
+      font-weight: 600 !important;
+      margin-top: 4px !important;
+    }
+    .pagination-item-label {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--sidebarSublink);
+    }
+
+    /* --- Global Markdown Styling --- */
+    .markdown-section {
+      max-width: 850px;
+    }
+    .markdown-section h1 { 
+      font-size: 32px; 
+      font-weight: 600; 
+      border-bottom: 1px solid var(--borderColor); 
+      padding-bottom: 8px; 
+      margin-bottom: 16px;
+    }
+    .markdown-section h2 { 
+      font-size: 24px; 
+      font-weight: 600; 
+      border-bottom: 1px solid var(--borderColor); 
+      padding-bottom: 8px; 
+      margin-top: 24px;
+      margin-bottom: 16px;
+    }
+    .markdown-section blockquote {
+      border-left: 4px solid var(--accent);
+      background: var(--codeBackgroundColor);
+      color: var(--textColor);
+      padding: 16px;
+      border: 1px solid var(--borderColor);
+      border-left-width: 4px;
+      border-radius: 6px;
+      margin: 16px 0;
+    }
+  </style>
+</head>
+<body>
+  <div id="app">Loading EnduranceLife Manuals...</div>
+  <script>
+    window.$docsify = {
+      loadSidebar: true,
+      loadNavbar: true,
+      subMaxLevel: 2,
+      auto2top: true,
+      
+      search: {
+        paths: 'auto',
+        placeholder: 'Search',
+        noData: 'No results found.',
+        depth: 3
+      },
+
+      pagination: {
+        previousText: 'Previous',
+        nextText: 'Next',
+        crossChapter: true,
+        crossChapterText: true,
+      },
+
+      tabs: {
+        persist    : true,
+        sync       : true,
+        theme      : 'classic',
+        tabComments: true,
+        tabHeadings: true
+      },
+
+      darklightTheme: {
+        defaultTheme: 'light',
+        light: {
+          accent: '#c1272d',              
+          background: '#ffffff',          
+          textColor: '#24292f',           
+          sidebarSublink: '#57606a',      
+          borderColor: '#
