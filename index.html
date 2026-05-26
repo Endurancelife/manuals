@@ -87,7 +87,7 @@
 
     /* --- Sidebar & Navigation Styling --- */
     .sidebar {
-      background-color: var(--background) !important; /* GitHub Style: Blends with main page */
+      background-color: var(--background) !important; 
       border-right: 1px solid var(--borderColor);
       padding-top: 70px !important; 
       transition: background-color 0.3s, border-color 0.3s;
@@ -96,20 +96,23 @@
     .sidebar-back-link {
       display: block;
       padding: 0 20px;
-      margin-top: 20px;
-      margin-bottom: 25px;
+      margin-top: 0;
+      margin-bottom: 8px;
       font-size: 14px;
       font-weight: 400;
       color: var(--textColor);
       text-decoration: none;
       transition: color 0.2s;
     }
+    .sidebar-back-link:last-of-type {
+      margin-bottom: 25px;
+    }
     .sidebar-back-link:hover {
       color: var(--accent);
     }
 
     .sidebar-title {
-      font-size: 22px; /* GitHub Style: Larger title */
+      font-size: 22px; 
       font-weight: 700;
       color: var(--textColor);
       padding: 0 20px;
@@ -139,14 +142,14 @@
     }
     .sidebar ul li a {
       font-size: 14px;
-      padding: 8px 20px; /* GitHub Style: Slightly taller menu items */
+      padding: 8px 20px; 
       color: var(--sidebarSublink);
     }
     
     .sidebar ul li.active > a {
       color: var(--textColor) !important; 
       font-weight: 600;
-      background-color: var(--codeBackgroundColor) !important; /* GitHub Style: Gray highlight */
+      background-color: var(--codeBackgroundColor) !important; 
       border-left: 4px solid var(--accent) !important; 
       padding-left: 16px !important; 
       border-right: none;
@@ -186,6 +189,13 @@
     body.close .sidebar-toggle {
       width: 48px !important;
       border-radius: 0 6px 6px 0;
+    }
+    /* Move Hamburger to Top Left on Mobile Only */
+    @media (max-width: 768px) {
+      .sidebar-toggle {
+        top: 15px !important;
+        bottom: auto !important;
+      }
     }
 
     /* --- Pagination Cards --- */
