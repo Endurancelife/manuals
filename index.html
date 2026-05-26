@@ -102,22 +102,29 @@
       margin: 10px 0 15px 0;
     }
     
-    /* Meta Back Links (Stacked perfectly) */
-.sidebar-back-link {
+/* --- Utility Links Box (The "Plaque") --- */
+    .sidebar-utility-box {
+      margin: 0 15px 25px 15px;
+      padding: 12px 15px;
+      background-color: var(--background); /* Uses the pure background to contrast against the shaded sidebar */
+      border: 1px solid var(--borderColor);
+      border-radius: 8px;
+    }
+    
+    .sidebar-back-link {
       display: block;
-      padding: 0 20px;
-      margin-bottom: 8px;
-      font-size: 13px; /* Dropped back down from 14px */
-      font-weight: 400; /* Removed the bolding */
+      margin-bottom: 10px; /* Moves them closer together */
+      font-size: 13px;
+      font-weight: 400;
       color: var(--textColor);
       text-decoration: none;
       transition: color 0.2s;
     }
+    .sidebar-back-link:last-child {
+      margin-bottom: 0; /* Removes the gap under the bottom link */
+    }
     .sidebar-back-link:hover {
       color: var(--accent);
-    }
-    .sidebar-back-link:last-of-type {
-      margin-bottom: 25px; 
     }
 
     .sidebar ul li ul {
