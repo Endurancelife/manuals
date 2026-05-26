@@ -1,4 +1,4 @@
-<a href="https://www.endurancelife.com/classic-quarter" class="sidebar-back-link">← Homepage</a>
+<a href="https://www.endurancelife.com/classic-quarter" class="sidebar-back-link">↖Homepage</a>
 
 <div class="sidebar-title">Classic Quarter</div>
 <div class="sidebar-divider"></div>
