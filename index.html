@@ -121,7 +121,7 @@
     .sidebar {
       background-color: var(--codeBackgroundColor);
       border-right: 1px solid var(--borderColor);
-      padding-top: 70px !important; /* Pushes Search box below the top-left Hamburger */
+      padding-top: 70px !important; 
       transition: background-color 0.3s, border-color 0.3s;
     }
     
@@ -242,16 +242,29 @@
       transition: all 0.3s ease-in-out !important;
     }
     
-    /* CLOSED STATE (Sidebar hidden): Hamburger */
-    body.close .sidebar-toggle span:nth-child(1) { top: 0px !important; transform: rotate(0) !important; }
-    body.close .sidebar-toggle span:nth-child(2) { top: 6px !important; opacity: 1 !important; }
-    body.close .sidebar-toggle span:nth-child(3) { top: 12px !important; transform: rotate(0) !important; }
-    
-    /* OPEN STATE (Sidebar visible): "X" */
-    body:not(.close) .sidebar-toggle span:nth-child(1) { top: 6px !important; transform: rotate(45deg) !important; }
-    body:not(.close) .sidebar-toggle span:nth-child(2) { top: 6px !important; opacity: 0 !important; }
-    body:not(.close) .sidebar-toggle span:nth-child(3) { top: 6px !important; transform: rotate(-45deg) !important; }
+    /* DESKTOP LOGIC (>= 769px) */
+    @media screen and (min-width: 769px) {
+      /* Sidebar hidden (.close) -> Hamburger */
+      body.close .sidebar-toggle span:nth-child(1) { top: 0px !important; transform: rotate(0) !important; }
+      body.close .sidebar-toggle span:nth-child(2) { top: 6px !important; opacity: 1 !important; }
+      body.close .sidebar-toggle span:nth-child(3) { top: 12px !important; transform: rotate(0) !important; }
+      /* Sidebar visible (default) -> X */
+      body:not(.close) .sidebar-toggle span:nth-child(1) { top: 6px !important; transform: rotate(45deg) !important; }
+      body:not(.close) .sidebar-toggle span:nth-child(2) { top: 6px !important; opacity: 0 !important; }
+      body:not(.close) .sidebar-toggle span:nth-child(3) { top: 6px !important; transform: rotate(-45deg) !important; }
+    }
 
+    /* MOBILE LOGIC (<= 768px) */
+    @media screen and (max-width: 768px) {
+      /* Sidebar hidden (default) -> Hamburger */
+      body:not(.close) .sidebar-toggle span:nth-child(1) { top: 0px !important; transform: rotate(0) !important; }
+      body:not(.close) .sidebar-toggle span:nth-child(2) { top: 6px !important; opacity: 1 !important; }
+      body:not(.close) .sidebar-toggle span:nth-child(3) { top: 12px !important; transform: rotate(0) !important; }
+      /* Sidebar visible (.close) -> X */
+      body.close .sidebar-toggle span:nth-child(1) { top: 6px !important; transform: rotate(45deg) !important; }
+      body.close .sidebar-toggle span:nth-child(2) { top: 6px !important; opacity: 0 !important; }
+      body.close .sidebar-toggle span:nth-child(3) { top: 6px !important; transform: rotate(-45deg) !important; }
+    }
 
     /* --- Pagination Cards --- */
     .pagination-item {
