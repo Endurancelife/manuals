@@ -39,6 +39,10 @@
       color: var(--textColor);
       text-decoration: none;
     }
+    /* Removes the horizontal line under the main title ONLY on the homepage */
+    body.is-root-page .markdown-section h1 {
+      border-bottom: none !important;
+    }
 
     /* --- Top Navigation & Dark Mode Toggle Alignment --- */
     body .app-nav {
@@ -63,13 +67,13 @@
       pointer-events: auto !important;
     }
 
-    /* FIX: Mobile Nav Shrink (Stops invisible overlaps on Moon/Hamburger) */
+    /* Mobile Nav Shrink (Stops invisible overlaps on Moon/Hamburger) */
     @media (max-width: 768px) {
       body .app-nav {
         top: 25px !important;
-        left: 60px !important;  /* Leaves room for the Hamburger */
-        right: 60px !important; /* Leaves room for the Moon */
-        width: auto !important; /* Prevents stretching */
+        left: 60px !important;  
+        right: 60px !important; 
+        width: auto !important; 
         text-align: center;
         padding: 0 !important;
       }
@@ -104,7 +108,7 @@
       border-radius: 6px;
       text-align: left;
       text-decoration: none !important;
-      color: var(--accent) !important;
+      color: var(--textColor) !important; /* Neutral dark text instead of red */
       font-weight: 600;
       font-size: 16px;
       transition: background-color 0.1s ease, border-color 0.1s ease;
@@ -118,7 +122,7 @@
     .sidebar {
       background-color: var(--codeBackgroundColor);
       border-right: 1px solid var(--borderColor);
-      padding-top: 70px !important; /* Pushes Search box down below the Hamburger */
+      padding-top: 70px !important; 
       transition: background-color 0.3s, border-color 0.3s;
     }
     
@@ -168,7 +172,7 @@
       color: var(--sidebarSublink);
     }
     
-    /* GitHub Style Active Menu Link (Shaded with red bar) */
+    /* GitHub Style Active Menu Link */
     .sidebar ul li.active > a {
       color: var(--textColor) !important; 
       font-weight: 600;
@@ -201,7 +205,7 @@
       outline: none !important;
     }
 
-    /* --- FIX: Restored Native Hamburger & X Animation --- */
+    /* --- Restored Native Hamburger & X Animation --- */
     body .sidebar-toggle {
       background-color: var(--background) !important;
       border: 1px solid var(--borderColor) !important;
@@ -209,6 +213,9 @@
       border-radius: 0 6px 6px 0 !important; 
       top: 15px !important;
       bottom: auto !important;
+      width: 44px !important;  /* Clamps the width to stop it stretching */
+      height: 44px !important; 
+      padding: 12px 10px !important; /* Re-centers the inner lines */
     }
     body .sidebar-toggle span {
       background-color: var(--textColor) !important;
@@ -224,7 +231,7 @@
       margin-top: 40px;
     }
     .pagination-item:hover {
-      border-color: var(--accent) !important;
+      border-color: var(--textColor) !important; /* Heavier dark border on hover instead of red */
       transform: translateY(-2px);
     }
     .pagination-item-title {
