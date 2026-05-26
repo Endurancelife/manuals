@@ -95,27 +95,19 @@
     }
     
     /* FIX: Subdued, Indented, and Spaced External Links */
-    .sidebar-back-link {
+   .sidebar-back-link {
       display: block;
-      padding: 0 20px 0 24px; /* Indented slightly */
+      padding: 0 20px;
       margin-top: 0;
-      margin-bottom: 4px; /* Closer together */
-      font-size: 13px; 
+      margin-bottom: 2px; /* Pulls it flush with the title */
+      font-size: 12px;    /* Shrinks the font */
       font-weight: 400;
-      color: var(--sidebarSublink); 
-      opacity: 0.8; /* Made slightly lighter */
+      color: var(--sidebarSublink);
       text-decoration: none;
-      transition: all 0.2s;
-    }
-    .sidebar-back-link:first-of-type {
-      margin-top: -5px; /* Pulls them closer to the search box */
-    }
-    .sidebar-back-link:last-of-type {
-      margin-bottom: 16px; /* Perfect top spacing for the Title */
+      transition: color 0.2s;
     }
     .sidebar-back-link:hover {
       color: var(--accent);
-      opacity: 1; /* Brightens up on hover */
     }
 
     /* FIX: Perfectly Balanced Title Spacing */
