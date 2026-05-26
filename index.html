@@ -54,6 +54,7 @@
       pointer-events: auto !important;
     }
 
+    /* Prevents mobile content from crashing into corner icons */
     @media (max-width: 768px) {
       .markdown-section {
         padding-top: 60px !important; 
@@ -85,11 +86,11 @@
       text-decoration: underline !important;
     }
 
-    /* --- Sidebar & Navigation Styling --- */
+    /* --- Sidebar & Navigation Styling (GitHub Flat Theme) --- */
     .sidebar {
       background-color: var(--background) !important; 
       border-right: 1px solid var(--borderColor);
-      padding-top: 70px !important; 
+      padding-top: 70px !important; /* Clears the fixed top-left hamburger */
       transition: background-color 0.3s, border-color 0.3s;
     }
     
@@ -178,24 +179,68 @@
       outline: none !important;
     }
 
-    /* --- Native Hamburger Menu --- */
-    .sidebar-toggle {
+    /* --- BULLETPROOF CUSTOM HAMBURGER MENU --- */
+    body .sidebar-toggle {
       background-color: var(--background) !important;
-      transition: background-color 0.3s !important;
+      border: 1px solid var(--borderColor) !important;
+      border-radius: 6px !important;
+      width: 42px !important;
+      height: 42px !important;
+      top: 15px !important;
+      left: 15px !important;
+      bottom: auto !important;
+      right: auto !important;
+      padding: 0 !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      z-index: 99999 !important;
+      position: fixed !important;
+      cursor: pointer;
     }
-    .sidebar-toggle span {
+    
+    body .sidebar-toggle-button {
+      width: 18px !important;
+      height: 14px !important;
+      position: relative !important;
+      padding: 0 !important;
+      margin: 0 !important;
+      display: block !important;
+    }
+    
+    body .sidebar-toggle span {
       background-color: var(--textColor) !important;
+      width: 100% !important;
+      height: 2px !important;
+      border-radius: 2px !important;
+      position: absolute !important;
+      left: 0 !important;
+      margin: 0 !important;
+      transition: all 0.3s ease-in-out !important;
     }
-    body.close .sidebar-toggle {
-      width: 48px !important;
-      border-radius: 0 6px 6px 0;
+    
+    /* DESKTOP LOGIC (>= 769px): .close = Sidebar Hidden */
+    @media screen and (min-width: 769px) {
+      /* Sidebar hidden -> Show Hamburger */
+      body.close .sidebar-toggle span:nth-child(1) { top: 0px !important; transform: rotate(0) !important; }
+      body.close .sidebar-toggle span:nth-child(2) { top: 6px !important; opacity: 1 !important; }
+      body.close .sidebar-toggle span:nth-child(3) { top: 12px !important; transform: rotate(0) !important; }
+      /* Sidebar visible -> Show X */
+      body:not(.close) .sidebar-toggle span:nth-child(1) { top: 6px !important; transform: rotate(45deg) !important; }
+      body:not(.close) .sidebar-toggle span:nth-child(2) { top: 6px !important; opacity: 0 !important; }
+      body:not(.close) .sidebar-toggle span:nth-child(3) { top: 6px !important; transform: rotate(-45deg) !important; }
     }
-    /* Move Hamburger to Top Left on Mobile Only */
-    @media (max-width: 768px) {
-      .sidebar-toggle {
-        top: 15px !important;
-        bottom: auto !important;
-      }
+
+    /* MOBILE LOGIC (<= 768px): The Docsify class logic is inverted here! */
+    @media screen and (max-width: 768px) {
+      /* Sidebar hidden -> Show Hamburger */
+      body:not(.close) .sidebar-toggle span:nth-child(1) { top: 0px !important; transform: rotate(0) !important; }
+      body:not(.close) .sidebar-toggle span:nth-child(2) { top: 6px !important; opacity: 1 !important; }
+      body:not(.close) .sidebar-toggle span:nth-child(3) { top: 12px !important; transform: rotate(0) !important; }
+      /* Sidebar visible -> Show X */
+      body.close .sidebar-toggle span:nth-child(1) { top: 6px !important; transform: rotate(45deg) !important; }
+      body.close .sidebar-toggle span:nth-child(2) { top: 6px !important; opacity: 0 !important; }
+      body.close .sidebar-toggle span:nth-child(3) { top: 6px !important; transform: rotate(-45deg) !important; }
     }
 
     /* --- Pagination Cards --- */
