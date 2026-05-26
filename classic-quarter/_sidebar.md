@@ -1,5 +1,6 @@
 <a href="https://www.endurancelife.com/classic-quarter" class="sidebar-back-link">← Website homepage</a>
 
+<div class="sidebar-divider"></div>
 <div class="sidebar-title">Classic Quarter</div>
 <div class="sidebar-divider"></div>
 
