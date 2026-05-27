@@ -37,19 +37,19 @@ Because the Image Zoom script is installed, any standard image you place in the 
 
 These color-coded callout boxes are created using standard blockquotes (`>`), with the specific alert type declared on the very first line. 
 
-> [!NOTE]
+> [!note]
 > **This is a Note**
 > Use this blue box for general information, background details, or standard reminders.
 
-> [!TIP]
+> [!tip]
 > **This is a Tip**
 > Use this green box for helpful advice, best practices, or "pro tips" for the user.
 
-> [!WARNING]
+> [!warning]
 > **This is a Warning**
 > Use this yellow box to grab attention before the user makes a common mistake or misses a deadline.
 
-> [!DANGER]
+> [!danger]
 > **This is a Danger Alert**
 > Use this red box for critical safety information, emergency procedures, or absolute rules.
 
