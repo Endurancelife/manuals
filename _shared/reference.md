@@ -35,21 +35,21 @@ Because the Image Zoom script is installed, any standard image you place in the 
 
 ## 4. Flexible Alerts Plugin
 
-These color-coded callout boxes are created using standard blockquotes (`>`), with the specific alert type declared on the very first line. 
+These color-coded callout boxes are created using standard blockquotes (`>`), with the specific alert type declared in UPPERCASE on the very first line. 
 
-> [!note]
+> [!NOTE]
 > **This is a Note**
 > Use this blue box for general information, background details, or standard reminders.
 
-> [!tip]
+> [!TIP]
 > **This is a Tip**
 > Use this green box for helpful advice, best practices, or "pro tips" for the user.
 
-> [!warning]
+> [!WARNING]
 > **This is a Warning**
 > Use this yellow box to grab attention before the user makes a common mistake or misses a deadline.
 
-> [!danger]
+> [!DANGER]
 > **This is a Danger Alert**
 > Use this red box for critical safety information, emergency procedures, or absolute rules.
 
@@ -57,7 +57,7 @@ These color-coded callout boxes are created using standard blockquotes (`>`), wi
 
 ## 5. Copy to Clipboard Plugin
 
-By wrapping text in three backticks (the ``` symbol, usually above the Tab key), you create a "code block." The plugin automatically adds a copy button to the top right corner. This is perfect for sharing exact text that needs to be copied without formatting errors.
+By wrapping text in three backticks (the ``` symbol), you create a "code block." The plugin automatically adds a copy button to the top right corner.
 
 ```text
 Emergency Contact Number: +44 7123 456789
