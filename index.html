@@ -370,8 +370,24 @@
      //         searchInput.dispatchEvent(new Event('input', { bubbles: true })); 
      //       }
     //     });
+   //     }
+    //  ]
+            hook.doneEach(function () {
+      setTimeout(function () {
+        const searchInput = document.querySelector('.search input');
+
+        if (searchInput) {
+          searchInput.value = '';
+
+          searchInput.dispatchEvent(
+            new Event('input', { bubbles: true })
+          );
         }
-      ]
+      }, 50);
+    });
+
+  }
+]
     }
   </script>
 
