@@ -301,19 +301,29 @@
   </style>
 </head>
 <body>
-  <div id="app">Loading EnduranceLife Manuals...</div>
+  <div id="app">Loading Manuals...</div>
   <script>
-    window.$docsify = {
-      loadSidebar: true,
-      subMaxLevel: 2,
-      auto2top: true,
+    
+  window.$docsify = {
+    loadSidebar: true,
+    loadNavbar: true,           // REQUIRED: Restores your top 'Select Event' dropdown menu
+    subMaxLevel: 2,
+    auto2top: true,
+    
+    // ==========================================================================
+    // SCOPED ENGINE SEARCH CONFIGURATION
+    // ==========================================================================
+    search: {
+      maxAge: 86400000,         // Caches search indexes for speed
+      paths: 'auto',            // Restricts indexing to the active sidebar only
       
-      search: {
-        paths: 'auto',
-        placeholder: 'Search',
-        noData: 'No results found.',
-        depth: 3
-      },
+      // NAMESPACES: Hard-quarantines search results by folder path
+      pathNamespaces: ['/classic-quarter', '/exmoor'], 
+
+      placeholder: 'Search',
+      noData: 'No results found.',
+      depth: 3
+    },
 
       pagination: {
         previousText: 'Previous',
